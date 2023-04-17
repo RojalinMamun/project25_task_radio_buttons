@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>insert AccessRecord objects</h1>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="wo">Name</label>
+            <select name="wo" id="wo">
+            {% for a in wo %}
+            <option value="{{a}}">{{a.name}}</option>
+            {% endfor %}
+            </select>
+        <br><br>
+        <label for="at">Author</label>
+        <input type="text" name="at" id="atr">
+        <br><br>
+
+        <label for="da">Date</label>
+        <input type="date" name="da" id="da">
+        <br><br>
+        <input type="submit" value="Insert access record">
+        </form>
+    </center>
+</body>
+</html>

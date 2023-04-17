@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>select the radio element</h1>
+        <form action="{% url 'display_webpage' %}" method="POST">
+            {% csrf_token %}
+                {% for a in topic %}
+                <label for="topic">{{a.topic_name}}</label>
+                <input type="radio" name="topic" id="topic" value="{{a}}">
+                {% endfor %}
+
+            <br><br>
+            <input type="submit" value="Retrive webpage">
+
+        </form>
+    </center>
+</body>
+</html>
